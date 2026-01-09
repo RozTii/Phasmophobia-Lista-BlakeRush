@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Phasmophobia – Lista de Fantasmas</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .ghost {
+      cursor: pointer;
+      margin: 5px;
+      padding: 10px;
+      border: 1px solid #555;
+      display: inline-block;
+      width: 150px;
+    }
+    .done {
+      text-decoration: line-through;
+      color: red;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Lista de Fantasmas</h1>
+
+<div id="ghosts"></div>
+
+<script>
+const ghosts = [
+  "Banshee","Demonio","Hantu","Moroi","Obambo","Ente","Revenant","Thaye","Espectro",
+  "Dayan","Gallu","Jinn","Myling","Oni","Poltergeist","Sombra","Mímico","Yokai",
+  "Deogen","Goryo","Pesadilla","Obake","Onryo","Raiju","Espíritu","Gemelos","Yurei"
+];
+
+const container = document.getElementById("ghosts");
+
+ghosts.forEach(name => {
+  const div = document.createElement("div");
+  div.className = "ghost";
+  div.textContent = name;
+  div.onclick = () => div.classList.toggle("done");
+  container.appendChild(div);
+});
+</script>
+
+</body>
+</html>
